@@ -2,7 +2,6 @@
 //THE TEST SERVER IS RUNNING ON LOCALHOST:3000//
 ////////////////////////////////////////////////
 
-const { default: axios } = require("axios");
 
 // PROBLEM 1
 /*
@@ -110,9 +109,12 @@ const repeatMyParam = () => {
     axios
         .get('http://localhost:3000/repeat/pizza')
         .then(res => {
-            return res.data;
+            let repeatEl = document.querySelector('#repeat-text');
+            repeatEl.textContent = res.data;
+            repeatEl.style.display = 'block';
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
+    
 }
 
 document.getElementById('repeat-button').addEventListener('click',repeatMyParam)
@@ -125,7 +127,6 @@ document.getElementById('repeat-button').addEventListener('click',repeatMyParam)
 */
 
 // Code in the repeatMyParam function above
-
 
 
 // PROBLEM 8
