@@ -83,7 +83,7 @@ sayHelloButton.addEventListener('click',sayHello)
 
 const ohMy = () => {
     axios
-    .get(http://localhost:3000/animals)
+    .get("http://localhost:3000/animals")
     .then(res => {
         console.log(res.data);
     })
