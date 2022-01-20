@@ -10,7 +10,7 @@
 */
 
 // CODE HERE
-
+let sayHelloButton = document.querySelector('#say-hello-button')
 
 // PROBLEM 2
 /*
@@ -20,7 +20,12 @@
 */
 
 // CODE HERE
+function buttonColorChange() {
+    sayHelloButton.style.backgroundColor = "black"
+    sayHelloButton.style.color = "white"
+}
 
+sayHelloButton.addEventListener('mouseover', buttonColorChange);
 
 // PROBLEM 3
 /*
@@ -32,7 +37,12 @@
 */
 
 // CODE HERE
+function buttonNormalColor() {
+    sayHelloButton.style.backgroundColor = "#EFEFEF"
+    sayHelloButton.style.color = "black"
+}
 
+sayHelloButton.addEventListener('mouseout',buttonNormalColor)
 
 // PROBLEM 4
 /*
