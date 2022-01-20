@@ -179,7 +179,8 @@ document.querySelector('#query-button').addEventListener('click',attachQuery)
 */
 
 // Edit code in Problem 8
-
+/* 1) 'You sent an empty query!'
+   2) 'You sent more than 1 query!' */
 
 
 ////////////
@@ -206,3 +207,34 @@ document.querySelector('#query-button').addEventListener('click',attachQuery)
 */
 
 // CODE HERE 
+
+function createFood(evt) {
+evt.preventDefault()
+
+    let foodInput = document.querySelector('input')
+
+    let body = {
+            newFood: foodInput.value
+    }
+
+    axios
+        .post('http://localhost:3000/food',body)
+        .then(res => {
+            console.log(res.data)
+            const foodList = document.querySelector('section')
+            foodList.innerHTML = '';
+
+            res.data.forEach(foodString => {
+                const newP = document.createElement('p')
+                newP.textContent = foodString;
+                foodList.appendChild(newP)
+                foodInput.value = ""
+                })
+            }
+        )
+        .catch(err => console.log(err));
+}
+
+let formSubmit = document.querySelector('form')
+
+formSubmit.addEventListener('click',createFood) // submitting on a form, use the form submit, not a button click
