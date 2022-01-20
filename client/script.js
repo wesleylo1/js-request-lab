@@ -139,7 +139,16 @@ document.getElementById('repeat-button').addEventListener('click',repeatMyParam)
 */
 
 // CODE HERE
+function attachQuery() {
+    axios
+        .get('http://localhost:3000/query-test?i-am-confused')
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => console.log(err))
+}
 
+document.querySelector('#query-button').addEventListener('click',attachQuery)
 
 
 ////////////////
