@@ -60,6 +60,9 @@ const sayHello = () => {
         helloText.textContent = res.data;
     })
 }
+
+sayHelloButton.addEventListener('click',sayHello)
+
 // DO NOT EDIT FUNCTION
 
 // CODE HERE
