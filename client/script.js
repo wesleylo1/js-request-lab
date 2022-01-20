@@ -107,8 +107,15 @@ document.getElementById('animals-button').addEventListener('click', ohMy)
 */
 
 const repeatMyParam = () => {
-    //YOUR CODE HERE
+    axios
+        .get('http://localhost:3000/repeat/pizza')
+        .then(res => {
+            return res.data;
+        })
+        .catch(err => console.log(err))
 }
+
+document.getElementById('repeat-button').addEventListener('click',repeatMyParam)
 
 // PROBLEM 7
 /*
