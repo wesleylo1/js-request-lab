@@ -84,7 +84,12 @@ const ohMy = () => {
     axios
     .get("http://localhost:3000/animals")
     .then(res => {
-        console.log(res.data);
+        for(let i = 0; i < res.data.length; i++) {
+            let article = document.querySelector('#animals-button')
+            let newPara = document.createElement('p')
+            newPara.textContent = res.data[i]
+            article.appendChild(newPara)
+        }
     })
     .catch(err => console.log(err))
 }
@@ -141,7 +146,7 @@ document.getElementById('repeat-button').addEventListener('click',repeatMyParam)
 // CODE HERE
 function attachQuery() {
     axios
-        .get('http://localhost:3000/query-test?i-am-confused')
+        .get('http://localhost:3000/query-test?i-am-confused=100')
         .then(res => {
             console.log(res.data)
         })
