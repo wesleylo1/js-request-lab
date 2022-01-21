@@ -62,12 +62,11 @@ const sayHello = () => {
     })
 }
 
-sayHelloButton.addEventListener('click',sayHello)
 
 // DO NOT EDIT FUNCTION
 
 // CODE HERE
-
+sayHelloButton.addEventListener('click',sayHello)
 
 // PROBLEM 5 
 /*
@@ -231,6 +230,7 @@ evt.preventDefault()
                 foodInput.value = ""
                 })
             }
+            
         )
         .catch(err => console.log(err));
 }
